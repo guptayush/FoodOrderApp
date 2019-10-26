@@ -9,37 +9,28 @@ const { Types, Creators } = createActions({
   userFailure: null
 })
 
-export const GithubTypes = Types
+export const MenuTypes = Types
 export default Creators
 
 /* ------------- Initial State ------------- */
 
 export const INITIAL_STATE = Immutable({
-  avatar: null,
   fetching: null,
   error: null,
   username: null
 })
 
-/* ------------- Selectors ------------- */
-
-export const GithubSelectors = {
-  selectAvatar: state => state.github.avatar
-}
 
 /* ------------- Reducers ------------- */
 
-// request the avatar for a user
 export const request = (state, { username }) =>
   state.merge({ fetching: true, username, avatar: null })
 
-// successful avatar lookup
 export const success = (state, action) => {
   const { avatar } = action
   return state.merge({ fetching: false, error: null, avatar })
 }
 
-// failed to get the avatar
 export const failure = (state) =>
   state.merge({ fetching: false, error: true, avatar: null })
 
