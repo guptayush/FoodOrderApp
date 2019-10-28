@@ -9,7 +9,8 @@ const ApplicationStyles = {
   screen: {
     mainContainer: {
       flex: 1,
-      backgroundColor: Colors.transparent
+      backgroundColor: Colors.transparent,
+      padding: Metrics.doubleBaseMargin
     },
     backgroundImage: {
       position: 'absolute',
@@ -27,54 +28,31 @@ const ApplicationStyles = {
       margin: Metrics.section,
       padding: Metrics.baseMargin
     },
-    sectionText: {
+  },
+  fonts: {
+    fontsLarge: {
+      ...Fonts.style.h5,
+      color: Colors.black,
+      fontWeight: '400'
+    },
+    fontsRegular: {
       ...Fonts.style.normal,
-      paddingVertical: Metrics.doubleBaseMargin,
-      color: Colors.snow,
-      marginVertical: Metrics.smallMargin,
-      textAlign: 'center'
+      color: Colors.blackText,
     },
-    subtitle: {
-      color: Colors.snow,
-      padding: Metrics.smallMargin,
-      marginBottom: Metrics.smallMargin,
-      marginHorizontal: Metrics.smallMargin
+    fontsMedium: {
+      ...Fonts.style.description,
+      color: Colors.blackText,
     },
-    titleText: {
-      ...Fonts.style.h2,
-      fontSize: 14,
-      color: Colors.text
-    }
-  },
-  darkLabelContainer: {
-    padding: Metrics.smallMargin,
-    paddingBottom: Metrics.doubleBaseMargin,
-    borderBottomColor: Colors.border,
-    borderBottomWidth: 1,
-    marginBottom: Metrics.baseMargin
-  },
-  darkLabel: {
-    fontFamily: Fonts.type.bold,
-    color: Colors.snow
-  },
-  groupContainer: {
-    margin: Metrics.smallMargin,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  },
-  sectionTitle: {
-    ...Fonts.style.h4,
-    color: Colors.coal,
-    backgroundColor: Colors.ricePaper,
-    padding: Metrics.smallMargin,
-    marginTop: Metrics.smallMargin,
-    marginHorizontal: Metrics.baseMargin,
-    borderWidth: 1,
-    borderColor: Colors.ember,
-    alignItems: 'center',
-    textAlign: 'center'
+    fontsMediumLight: {
+      ...Fonts.style.description,
+      color: Colors.grey,
+    },
+    fontsSmall: {
+      ...Fonts.style.small,
+      color: Colors.blackText,
+    },
   }
+
 }
 
 export default ApplicationStyles

@@ -5,7 +5,7 @@ const colors = {
   transparent: 'rgba(0,0,0,0)',
   silver: '#F7F7F7',
   steel: '#CCCCCC',
-  error: 'rgba(200, 0, 0, 0.8)',
+  error: '#E34F30',
   ricePaper: 'rgba(255,255,255, 0.75)',
   frost: '#D8D8D8',
   cloud: 'rgba(200,200,200, 0.35)',
@@ -21,7 +21,12 @@ const colors = {
   eggplant: '#251a34',
   border: '#483F53',
   banner: '#5F3E63',
-  text: '#E0D7E5'
+  text: '#E0D7E5',
+  black: 'black',
+  lightYellow: '#FFFFF1',
+  grey: '#80868B',
+  blackText: '#44475B',
+  lightGreen: '#D7EED3'
 }
 
 export default colors

@@ -9,7 +9,7 @@ import { MenuTypes } from '../Redux/MenuRedux'
 
 /* ------------- Sagas ------------- */
 
-// import { getUserAvatar } from './MenuSagas'
+import { getMenuItems } from './MenuSaga'
 
 /* ------------- API ------------- */
 
@@ -21,6 +21,6 @@ const api = DebugConfig.useFixtures ? FixtureAPI : API.create()
 
 export default function * root () {
   yield all([
-    // takeLatest(MenuTypes.USER_REQUEST, getUserAvatar, api)
+    takeLatest(MenuTypes.GET_MENU_ITEMS_REQUEST, getMenuItems, api)
   ])
 }

@@ -8,6 +8,7 @@ import ReduxPersist from '../Config/ReduxPersist'
 export const reducers = combineReducers({
   nav: require('./NavigationRedux').reducer,
   menu: require('./MenuRedux').reducer,
+  cart: require('./CartRedux').reducer,
 })
 
 export default () => {

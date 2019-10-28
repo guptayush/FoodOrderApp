@@ -39,9 +39,9 @@ const style = {
     fontFamily: type.base,
     fontSize: size.h5
   },
-  h6: {
-    fontFamily: type.emphasis,
-    fontSize: size.h6
+  small: {
+    fontFamily: type.base,
+    fontSize: size.small
   },
   normal: {
     fontFamily: type.base,

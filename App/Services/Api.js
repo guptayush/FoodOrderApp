@@ -1,8 +1,8 @@
 // a library to wrap and simplify api calls
 import apisauce from 'apisauce'
-
+import Constants from '../Config/Constants'
 // our "constructor"
-const create = (baseURL = 'https://api.github.com/') => {
+const create = (baseURL = Constants.API_URL) => {
   // ------
   // STEP 1
   // ------
@@ -14,7 +14,9 @@ const create = (baseURL = 'https://api.github.com/') => {
     baseURL,
     // here are some default headers
     headers: {
-      'Cache-Control': 'no-cache'
+      'Cache-Control': 'no-cache',
+      'Accept': 'application/json',
+      'user_key': Constants.API_KEY
     },
     // 10 second timeout...
     timeout: 10000
@@ -34,9 +36,10 @@ const create = (baseURL = 'https://api.github.com/') => {
   // Since we can't hide from that, we embrace it by getting out of the
   // way at this level.
   //
-  const getRoot = () => api.get('')
-  const getRate = () => api.get('rate_limit')
-  const getUser = (username) => api.get('search/users', {q: username})
+  const getMenuItems = (resId) => {
+    return api.get('/api/v2.1/dailymenu?res_id=' + resId)
+  }
+
 
   // ------
   // STEP 3
@@ -52,9 +55,7 @@ const create = (baseURL = 'https://api.github.com/') => {
   //
   return {
     // a list of the API functions from step 2
-    getRoot,
-    getRate,
-    getUser
+    getMenuItems,
   }
 }
 
