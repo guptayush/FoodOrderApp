@@ -6,7 +6,7 @@ import Immutable from 'seamless-immutable'
 const { Types, Creators } = createActions({
   getMenuItemsRequest: ['resId'],
   getMenuItemsSuccess: ['response'],
-  getMenuItemsFailed: [],
+  getMenuItemsFailed: ['message'],
 })
 
 export const MenuTypes = Types
@@ -16,6 +16,7 @@ export default Creators
 
 export const INITIAL_STATE = Immutable({
   fetchingMenu: null,
+  error: null,
   menuItems: []
 })
 
@@ -29,6 +30,7 @@ export const getMenuItemsSuccess = (state, action) => {
   const { response } = action
   return state.merge({
     fetchingMenu: false,
+    error: null,
     menuItems: [].concat(...response.map((menu) => (
       menu.daily_menu.dishes
     )))
@@ -36,7 +38,7 @@ export const getMenuItemsSuccess = (state, action) => {
 }
 
 export const getMenuItemsFailed = (state) =>
-  state.merge({ fetchingMenu: false, error: true })
+  state.merge({ fetchingMenu: false, error: message })
 
 /* ------------- Hookup Reducers To Types ------------- */
 

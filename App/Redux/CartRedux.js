@@ -40,9 +40,12 @@ export const addToCart = (state, action) => {
 
 export const removeFromCart = (state, action) => {
     const { dish } = action
-    let cartItems = state.cartItems
-    if (state.cartItems.hasOwnProperty(dish.dish_id)) {
-        delete cartItems[dish.dish_id]
+    let cartItems = JSON.parse(JSON.stringify(state.cartItems))
+    if (cartItems.hasOwnProperty(dish.dish_id)) {
+        if (cartItems[dish.dish_id].qty > 1) {
+            cartItems[dish.dish_id].qty--
+        } else
+            delete cartItems[dish.dish_id]
     }
 
     return state.merge({

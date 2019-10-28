@@ -11,6 +11,8 @@ export function* getMenuItems(api, action) {
 
     yield put(MenuActions.getMenuItemsSuccess(response.data.daily_menus))
   } else {
-    yield put(MenuActions.getMenuItemsFailed(response.message))
+    if (response.data)
+      yield put(MenuActions.getMenuItemsFailed(response.data.message))
+    else yield put(MenuActions.getMenuItemsFailed())
   }
 }

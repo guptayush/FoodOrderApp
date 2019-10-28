@@ -39,6 +39,10 @@ const ApplicationStyles = {
       ...Fonts.style.normal,
       color: Colors.blackText,
     },
+    fontsRegularLight: {
+      ...Fonts.style.normal,
+      color: Colors.grey,
+    },
     fontsMedium: {
       ...Fonts.style.description,
       color: Colors.blackText,

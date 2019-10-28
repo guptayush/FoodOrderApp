@@ -24,6 +24,7 @@ const colors = {
   text: '#E0D7E5',
   black: 'black',
   lightYellow: '#FFFFF1',
+  yellow:'#ffe3ba',
   grey: '#80868B',
   blackText: '#44475B',
   lightGreen: '#D7EED3'
